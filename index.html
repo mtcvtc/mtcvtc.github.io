@@ -2,6 +2,150 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            overflow: hidden; /* Ensure no scrollbars appear */
+        }
+        .container {
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+            position: relative; /* Ensure that children are positioned relative to this container */
+            z-index: 2; /* Place the container above the grid */
+        }
+        .bubble {
+            display: inline-block;
+            background: #fff133;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            margin-bottom: 20px;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        .bubble:before {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #ffeb3b;
+            border-bottom: 0;
+            margin-left: -10px;
+            margin-bottom: -10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Comic-style grid layout */
+        .grid-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: 1fr;
+            z-index: 1; /* Ensure the grid is behind the container */
+            overflow-y: scroll; /* Make the background scrollable */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        }
+
+        .grid-wrapper::-webkit-scrollbar {
+            width: 0;  /* Safari and Chrome */
+            display: none; /* Safari and Chrome */
+        }
+
+        .news-item {
+            min-height: 400px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero-item {
+            background-image: url("/1.png");
+            grid-column: 1 / span 2;
+            grid-row: 1 / 50;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 75px), 0 100%);
+        }
+
+        .standard-item:nth-child(2) {
+            background-image: url("/3.png");
+            grid-column: 1 / span 1;
+            grid-row: 50 / 100;
+            -webkit-clip-path: polygon(100% 6%, 85% 52%, 94% 52%, 90% 81%, 0 87%, 0 13%);
+            clip-path: polygon(100% 6%, 85% 52%, 94% 52%, 90% 81%, 0 87%, 0 13%);
+            margin-top: -73px;
+        }
+
+        .standard-item:nth-child(3) {
+            background-image: url("/4.png");
+            grid-column: 2 / span 1;
+            grid-row: 50 / 100;
+            -webkit-clip-path: polygon(100% 0, 100% 100%, 4% 84%, 8% 52%, 0% 52%, 13% 6%);
+            clip-path: polygon(100% 0, 100% 100%, 4% 84%, 8% 52%, 0% 52%, 13% 6%);
+            margin-top: -73px;
+            margin-left: -15%;
+            margin-bottom: 18px;
+        }
+
+        .standard-item:nth-child(4) {
+            background-image: url("/2.png");
+            grid-column: 1 / span 2;
+            grid-row: 100 / 150;
+            -webkit-clip-path: polygon(45% 0, 100% 15%, 100% 100%, 0 100%, 0 5%);
+            clip-path: polygon(45% 0, 100% 15%, 100% 100%, 0 100%, 0 5%);
+            margin-top: -107px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-wrapper">
+        <div class="news-item hero-item"></div>
+        <div class="news-item standard-item"></div>
+        <div class="news-item standard-item"></div>
+        <div class="news-item standard-item"></div>
+    </div>
+    <div class="container">
+        <div class="bubble">
+            <h1>Oops!</h1>
+            <p>Our site is currently getting a makeover. We’ll be back before you know it!</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Under Maintenance</title>
@@ -34,3 +178,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+ -->
